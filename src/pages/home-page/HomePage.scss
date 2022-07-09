@@ -1,0 +1,24 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px;
+    @media (min-width:375px) { padding: 40px 80px; }
+    @media (min-width:768px) { padding: 40px 80px; }
+    @media (min-width:1024px) { padding: 40px 80px; }
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-wrapper {
+    width: 100%;
+    padding: 16px 12px;
+    @media (min-width:375px) { width: 100%; padding: 16px 12px; }
+    @media (min-width:768px) { width: 50%; padding: 16px 12px; }
+    @media (min-width:1024px) { width: 33%; padding: 16px 12px; }
+    @media (min-width:1240px) { width: 25%; padding: 16px 12px; }
+}

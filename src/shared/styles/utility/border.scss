@@ -1,0 +1,20 @@
+:root {
+    --border-radius: 0.5rem;
+    --border-radius-top: 0.5rem;
+    --border-radius-right: 0.5rem;
+    --border-radius-bottom: 0.5rem;
+    --border-radius-left: 0.5rem;
+}
+
+.border-round {
+    border-radius: var(--border-radius);
+}
+
+
+@for $count from 2 through 12 {
+    .radius-#{($count*2)+"px"} {
+        --border-radius: #{$count*2px};
+    }
+}
+
+.radius-circle { --border-radius: 50%; }

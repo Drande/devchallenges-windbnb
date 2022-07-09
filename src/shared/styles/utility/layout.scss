@@ -1,7 +1,12 @@
 .flex { display: flex; }
 .row { display: flex; flex-direction: row; }
 .column { display: flex; flex-direction: column; }
-
+.flex-wrap { flex-wrap: wrap; }
+//Justify
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+//Alignment
+.align-items-center { align-items: center; }
 
 @for $count from 1 through 12 {
     .p-#{($count*2)+"px"} { padding: $count*2px; }
@@ -10,6 +15,12 @@
     .m-#{($count*2)+"px"} { margin: $count*2px; }
     .mx-#{($count*2)+"px"} { margin-inline: $count*2px; }
     .my-#{($count*2)+"px"} { margin-top: $count*2px; margin-bottom: $count*2px; }
+    .p-#{($count)+"rem"} { padding: $count*1rem; }
+    .px-#{($count)+"rem"} { padding-inline: $count*1rem; }
+    .py-#{($count)+"rem"} { padding-top: $count*1rem; padding-bottom: $count*1rem; }
+    .m-#{($count)+"rem"} { margin: $count*1rem; }
+    .mx-#{($count)+"rem"} { margin-inline: $count*1rem; }
+    .my-#{($count)+"rem"} { margin-top: $count*1rem; margin-bottom: $count*1rem; }
     .g-#{($count)+"rem"} { gap: $count*1rem; }
     .l-#{($count)+"rem"} { left: $count*1rem; }
     .r-#{($count)+"rem"} { right: $count*1rem; }
@@ -17,4 +28,7 @@
     .b-#{($count)+"rem"} { bottom: $count*1rem; }
     .h-#{($count)+"rem"} { height: $count*1rem; }
     .w-#{($count)+"rem"} { width: $count*1rem; }
+    .col-#{$count} { width: #{calc($count * 100 / 12) + "%"}; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
 }
