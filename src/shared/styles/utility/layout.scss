@@ -1,0 +1,20 @@
+.flex { display: flex; }
+.row { display: flex; flex-direction: row; }
+.column { display: flex; flex-direction: column; }
+
+
+@for $count from 1 through 12 {
+    .p-#{($count*2)+"px"} { padding: $count*2px; }
+    .px-#{($count*2)+"px"} { padding-inline: $count*2px; }
+    .py-#{($count*2)+"px"} { padding-top: $count*2px; padding-bottom: $count*2px; }
+    .m-#{($count*2)+"px"} { margin: $count*2px; }
+    .mx-#{($count*2)+"px"} { margin-inline: $count*2px; }
+    .my-#{($count*2)+"px"} { margin-top: $count*2px; margin-bottom: $count*2px; }
+    .g-#{($count)+"rem"} { gap: $count*1rem; }
+    .l-#{($count)+"rem"} { left: $count*1rem; }
+    .r-#{($count)+"rem"} { right: $count*1rem; }
+    .t-#{($count)+"rem"} { top: $count*1rem; }
+    .b-#{($count)+"rem"} { bottom: $count*1rem; }
+    .h-#{($count)+"rem"} { height: $count*1rem; }
+    .w-#{($count)+"rem"} { width: $count*1rem; }
+}

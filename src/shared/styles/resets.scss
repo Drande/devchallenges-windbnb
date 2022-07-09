@@ -1,0 +1,35 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Removes any unexpected default margin, most part of the layout will be handled */
+body,h1,h2,h3,h4,h5,h6,p,figure,picture {
+    margin: 0;
+}
+
+/* Adjust min height to the view and a default line height of 50% the font size */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* By default these form components doesnt inherit font */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Making images more easy to handle */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* This removes animations when the user doesnt want to see them */
+@media (prefers-reduced-motion: reduce) {
+    *,*::before,*::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 00.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
