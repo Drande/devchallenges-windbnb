@@ -1,0 +1,91 @@
+@mixin button-theme($name, $color, $text, $outline, $hover, $disabled) {
+    &.#{$name} {
+        background-color: rgb(var($color));
+        color: rgb(var($text));
+        &.disabled {
+            color: $disabled;
+            background-color: rgba(var($color), 0.4);
+            pointer-events: none;
+        }
+        &:hover, &:focus {
+            background-color: rgb(var($hover));
+        }
+        &.outlined {
+            background-color: transparent;
+            border: 1px solid rgb(var($outline));
+            color: rgb(var($outline));
+            &:hover, &:focus {
+                background-color: rgba(var($outline), 0.1);
+            }
+            &.disabled {
+                color: rgba(var($outline), 0.4);
+                border: 1px solid rgba(var($outline), 0.4);
+            }
+        }
+        &.text {
+            background-color: transparent;
+            box-shadow: none;
+            color: rgb(var($outline));
+            &:hover, &:focus {
+                background-color: rgba(var($outline), 0.1);
+            }
+            &.disabled {
+                color: rgba(var($outline), 0.4);
+            }
+        }
+    }
+}
+
+@mixin button-size($name, $py, $px, $border, $icon) {
+    &.#{$name} {
+        padding: $py $px;
+        &.outlined {
+            padding: ($px - $border*2) ($py - $border*2);
+        }
+        &.text {
+            padding: ($px - $border*2) ($py - $border*2);
+        }
+        &.only-icon {
+            padding: $py $py;
+        }
+        & .icon {
+            line-height: inherit;
+            font-size: $icon;
+        }
+    }
+}
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    padding: 8px 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 16px;
+    border: none;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Shadow */
+
+    &.shadow {
+        box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+    }
+
+    @include button-size("sm", 10px, 20px, 1px, 14px);
+    @include button-size("md", 15px, 30px, 1px, 24px);
+    @include button-size("lg", 20px, 40px, 1px, 18px);
+
+    /* default is set as the default class for the component */
+    @include button-theme("primary", --color-primary, --color-primary-text, --color-primary, --color-primary-hover, #F2F2F2);
+    
+    /* Icons */
+    .start { margin-right: 12px; }
+    .end { margin-left: 12px; }
+}
