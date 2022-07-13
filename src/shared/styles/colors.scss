@@ -1,7 +1,23 @@
+//Color
+.color-primary { color: rgb(var(--color-primary)); }
+.color-gray-1 { color: var(--color-gray-1); }
 .color-gray-2 { color: var(--color-gray-2); }
 .color-gray-3 { color: var(--color-gray-3); }
 .color-gray-4 { color: var(--color-gray-4); }
 
+//Background
+.bg-color-primary {background-color: rgb(var(--color-primary)); }
+.bg-white {background-color: white; }
+
+//Border
+.border-color-primary { border-color: rgb(var(--color-primary)); }
+.border-color-gray-1 { border-color: var(--color-gray-1); }
 .border-color-gray-2 { border-color: var(--color-gray-2); }
 .border-color-gray-3 { border-color: var(--color-gray-3); }
 .border-color-gray-4 { border-color: var(--color-gray-4); }
+
+//Fill
+.fill-primary {fill: rgb(var(--color-primary)); }
+
+//Hover
+.hover-primary { &:hover { color: rgb(var(--color-primary)); }}

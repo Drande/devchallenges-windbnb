@@ -2,11 +2,75 @@
 .row { display: flex; flex-direction: row; }
 .column { display: flex; flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
+
+
+@mixin row-divider() {
+    & > .divider {
+        position: relative;
+        width: 0px;
+        height: 100%;
+        &::after {
+            position: absolute;
+            content:"";
+            width: 1px;
+            height: 100%;
+            background-color:#F2F2F2;
+        }
+    }
+}
+
+@mixin col-divider() {
+    & > .divider {
+        position: relative;
+        height: 0px;
+        width: 100%;
+        &::after {
+            position: absolute;
+            content:"";
+            height: 1px;
+            width: 100%;
+            background-color:#F2F2F2;
+        }
+    }
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    @include col-divider();
+    @media screen and (min-width: 375px) {
+        flex-direction: row;
+        @include row-divider();
+    }    
+}
+
+.fixed { position: fixed; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+//Divider
+.row {
+    @include row-divider();
+}
+
+.column {
+    @include col-divider();
+}
+
+
 //Justify
 .justify-content-center { justify-content: center; }
 .justify-content-between { justify-content: space-between; }
+.justify-content-evenly { justify-content: space-evenly; }
+
 //Alignment
 .align-items-center { align-items: center; }
+
+//Self
+.align-self-center { align-self: center; }
+.align-self-start { align-self: start; }
+.justify-self-start { justify-self: start; }
+.justify-self-center { justify-self: center; }
 
 @for $count from 1 through 12 {
     .p-#{($count*2)+"px"} { padding: $count*2px; }
@@ -29,6 +93,37 @@
     .h-#{($count)+"rem"} { height: $count*1rem; }
     .w-#{($count)+"rem"} { width: $count*1rem; }
     .col-#{$count} { width: #{calc($count * 100 / 12) + "%"}; }
-    .w-full { width: 100%; }
-    .h-full { height: 100%; }
+    .z-#{$count} { z-index: $count; }
 }
+
+@for $count from 1 through 12 {
+    @media screen and (min-width: 375px) {
+        .sm#{":col-" + $count} { width: #{calc($count * 100 / 12) + "%"}; }
+    }
+}
+
+// Resets
+.p-0 { padding: 0; }
+.px-0 { padding-inline: 0; }
+.py-0 { padding-top: 0; padding-bottom: 0; }
+.m-0 { margin: 0; }
+.mx-0 { margin-inline: 0; }
+.my-0 { margin-top: 0; margin-bottom: 0; }
+.g-0 { gap: 0; }
+.l-0 { left: 0; }
+.r-0 { right: 0; }
+.t-0 { top: 0; }
+.b-0 { bottom: 0; }
+.h-0 { height: 0; }
+.w-0 { width: 0; }
+.z-0 { z-index: 0; }
+
+// Full
+.l-max { left: 100%; }
+.r-max { right: 100%; }
+.t-max { top: 100%; }
+.b-max { bottom: 100%; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.w-view { width: 100vw; }
+.h-view { height: 100vh; }
