@@ -1,0 +1,56 @@
+.range-wrapper {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    > span {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .minus {
+        position: relative;
+        border-radius: 4px;
+        width: 21px;
+        border: 1px solid black;
+        height: 21px;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            content:"";
+            top:calc(50% - 0.5px);
+            left:25%;
+            width: 50%;
+            height: 1px;
+            background-color: black;
+        }
+    }
+    .plus {
+        position: relative;
+        border-radius: 4px;
+        border: 1px solid black;
+        width: 21px;
+        height: 21px;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            content:"";
+            top:calc(50% - 0.5px);
+            left:25%;
+            width: 50%;
+            height: 1px;
+            background-color: black;
+        }
+        
+        &::before {
+            position: absolute;
+            content:"";
+            top:25%;
+            left:calc(50% - 0.5px);
+            height: 50%;
+            width: 1px;
+            background-color: black;
+        }
+    }
+}
