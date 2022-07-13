@@ -27,7 +27,7 @@ const StayCard: FunctionComponent<StayCardProps> = (stay) => {
                 </div>
                 <Rating value={stay.rating}></Rating>
             </div>
-            <span className="subheader-2 color-gray-2">{stay.title}</span>
+            <span className="subheader-2 color-gray-1">{stay.title}</span>
         </div>
     );
 }

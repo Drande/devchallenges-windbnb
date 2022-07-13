@@ -28,7 +28,7 @@ const Rating: FunctionComponent<RatingProps> = ({ size=3.4, value=0}) => {
                 <mask id="svgmask1">
                     <polygon fill="#000000" points={StarPoints.map(p => { return `${p.x*size},${p.y*size}` }).join(' ') }></polygon>
                 </mask>
-                <polygon fill="#EB5757" points={StarPoints.map(p => { return `${p.x*size},${p.y*size}` }).join(' ') }></polygon>
+                <polygon className="fill-primary" points={StarPoints.map(p => { return `${p.x*size},${p.y*size}` }).join(' ') }></polygon>
             </svg>
             <span>{value.toFixed(2)}</span>
         </div>
