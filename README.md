@@ -78,4 +78,4 @@ $ npm start
 
 ## Contact
 
-- GitHub [@Drande](https://{github.com/Drande})
+- GitHub [@Drande](https://github.com/Drande)
